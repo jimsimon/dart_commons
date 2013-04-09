@@ -14,7 +14,7 @@ class Strings {
   }
   
   /**
-   * Returns [value] if it's not null or an empty string if it is.
+   * Returns [value] if it's not null, or an empty string if it is.
    */
   static String nonNullOrEmpty(String value) {
     if (value == null) {
@@ -24,7 +24,7 @@ class Strings {
   }
   
   /**
-   * Returns [value] if it's not empty or null if it is.
+   * Returns [value] if it's not empty, or null if it is.
    */
   static String nonEmptyOrNull(String value) {
     if (value != "") {
