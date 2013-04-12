@@ -1,3 +1,5 @@
+library preconditions_test;
+
 import "package:dart_commons/preconditions.dart";
 import "package:unittest/unittest.dart";
 
