@@ -1,8 +1,9 @@
 library run_all_tests;
 
-import 'dart:io' show Options;
+import 'dart:io';
 import 'package:unittest/compact_vm_config.dart';
 import 'package:unittest/unittest.dart';
+import "dart:mirrors";
 
 import "src/language/autocloseable_test.dart" as autocloseable_test;
 import "src/language/objects_test.dart" as objects_test;
@@ -13,15 +14,12 @@ main() {
   var args = new Options().arguments;
   var pattern = new RegExp(args.length > 0 ? args[0] : '.');
   useCompactVMConfiguration();
-
-  void addGroup(testFile, testMain) {
-    if (pattern.hasMatch(testFile)) {
-      group(testFile.replaceAll('_test.dart', ':'), testMain);
+  
+  //Use reflection to run all tests in any library ending with "_test"
+  MirrorSystem ms = currentMirrorSystem();
+  ms.libraries.forEach((String libName, LibraryMirror lm) {
+    if (libName.endsWith("_test")) {
+      lm.invoke("main", []);
     }
-  }
-
-  addGroup('autocloseable_test.dart', autocloseable_test.main);
-  addGroup('objects_test.dart', objects_test.main);
-  addGroup('preconditions_test.dart', preconditions_test.main);
-  addGroup('strings_test.dart', strings_test.main);
+  });
 }
