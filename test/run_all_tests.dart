@@ -1,6 +1,7 @@
 library run_all_tests;
 
 import 'package:unittest/compact_vm_config.dart';
+import "package:unittest/unittest.dart";
 import "dart:mirrors";
 
 import "src/language/autocloseable_test.dart" as autocloseable_test;
@@ -15,7 +16,9 @@ main() {
   MirrorSystem ms = currentMirrorSystem();
   ms.libraries.forEach((String libName, LibraryMirror lm) {
     if (libName.endsWith("_test")) {
-      lm.invoke("main", []);
+      group("$libName:", () {
+        lm.invoke("main", []);
+      });
     }
   });
 }
