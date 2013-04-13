@@ -20,13 +20,9 @@ main() {
     
     //TODO Find a better way to test custom error messages  
     test("throws error with custom message", () {
-      try {
-        checkThat(9000, greaterThan(9000), "Must be over 9000!");
-      } on PreconditionError catch(e) {
-        expect(e.toString(), equals("Must be over 9000!"));
-      } catch(e) {
-        fail("Expected a PreconditionError but got ${e.runtimeType}");
-      }
+      String customMessage = "Must be over 9000!";
+      expect(() => checkThat(9000, greaterThan(9000), customMessage),
+          throwsA(predicate((PreconditionError e) => e.message == customMessage)));
     });
   });
 }

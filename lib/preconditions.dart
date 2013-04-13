@@ -31,7 +31,7 @@ String _getDefaultMessageForMismatch(value, Matcher matcher, MatchState matchSta
 }
 
 class PreconditionError implements Error {
-  final String _message;
-  PreconditionError(this._message);
-  String toString() => _message;
+  final String message;
+  PreconditionError(this.message);
+  String toString() => message;
 }

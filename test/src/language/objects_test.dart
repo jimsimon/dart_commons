@@ -1,5 +1,7 @@
-import "package:dart_commons/language.dart";
-import "package:unittest/unittest.dart";
+library objects_test;
+
+import 'package:dart_commons/language.dart';
+import 'package:unittest/unittest.dart';
 import "dart:mirrors";
 
 main() {  
