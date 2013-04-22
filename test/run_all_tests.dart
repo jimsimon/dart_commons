@@ -4,7 +4,7 @@ import 'package:unittest/compact_vm_config.dart';
 import "package:unittest/unittest.dart";
 import "dart:mirrors";
 
-import "src/language/autocloseable_test.dart" as autocloseable_test;
+import "src/io/autocloseable_test.dart" as autocloseable_test;
 import "src/language/objects_test.dart" as objects_test;
 import "preconditions_test.dart" as preconditions_test;
 import "src/language/strings_test.dart" as strings_test;

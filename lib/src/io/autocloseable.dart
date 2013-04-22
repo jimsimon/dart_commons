@@ -1,4 +1,4 @@
-part of language;
+part of io;
 
 typedef dynamic AutoCloseableAction(AutoCloseable autoCloseable);
 typedef dynamic AutoCloseableOnError(e);
