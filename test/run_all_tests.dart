@@ -14,10 +14,10 @@ main() {
   
   //Use reflection to run all tests in any library ending with "_test"
   MirrorSystem ms = currentMirrorSystem();
-  ms.libraries.forEach((String libName, LibraryMirror lm) {
-    if (libName.endsWith("_test")) {
+  ms.libraries.forEach((Symbol libName, LibraryMirror lm) {
+    if (MirrorSystem.getName(libName).endsWith("_test")) {
       group("$libName:", () {
-        lm.invoke("main", []);
+        lm.invokeAsync(const Symbol("main"), []);
       });
     }
   });

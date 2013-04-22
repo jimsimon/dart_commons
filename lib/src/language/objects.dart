@@ -23,26 +23,14 @@ class Objects {
    * var list = null;
    * nullSafeInvoke(() => list.reversed.isEmpty); //returns null
    * 
-   * NOTE: This function does not guarrantee that a call will throw a NoSuchMethodError if a non-existent method 
-   * is called on a null value.  Example:
-   * 
-   * var list = null;
-   * nullSafeInvoke(() => list.fakeMethod());  //returns null and does not throw a [NoSuchMethodError]
-   * 
-   * The following example will throw a [NoSuchMethodError]:
-   * var list = [];
-   * nullSafeInvoke(() => list.fakeMethod());  //throws a [NoSuchMethodError] because the list is not null.
+   * NOTE: This function works by catching [NoSuchMethodError] errors because they are thrown when a method is called on a null
+   * object.  This means that these errors will not be thrown or propagate if they occur.
    */
   static nullSafeInvoke(Function f) {
     try {
       return f();
     } on NoSuchMethodError catch(e) {
-      //Use reflection to attempt to preserve some legitimate NoSuchMethodError's -- not guarranteed
-      reflect(e).getField("_receiver").then((InstanceMirror receiverMirror) {
-        if (receiverMirror.hasReflectee && receiverMirror.reflectee != null) {  //Actually tried to call a non-existant method on a valid object
-          throw e;
-        }
-      });
+      return null;
     }
     return null;
   }
