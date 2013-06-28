@@ -10,6 +10,7 @@ import "preconditions_test.dart" as preconditions_test;
 import "src/language/strings_test.dart" as strings_test;
 
 main() {
+  
   useCompactVMConfiguration();
   
   //Use reflection to run all tests in any library ending with "_test"

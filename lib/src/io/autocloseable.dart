@@ -15,7 +15,7 @@ abstract class AutoCloseable {
 
 /**
  * Takes an object that implements [AutoCloseable], executes the given [action] against it, and returns the return value
- * of the [action].  This method guarrantees that [close] will be called on the [AutoCloseable] object, even if an error
+ * of the [action].  This method guarrantees that close will be called on the [AutoCloseable] object, even if an error
  * occurs.  This method also optionally takes an [onError] handler that, if present, will be called when an error occurs.
  * If an error occurs and the [onError] handler is no specified, then the error will bubble up as normal.
  * 
