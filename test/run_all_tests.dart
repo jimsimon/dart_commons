@@ -3,7 +3,7 @@ library run_all_tests;
 import 'package:unittest/compact_vm_config.dart';
 import "package:unittest/unittest.dart";
 import "dart:mirrors";
-import "dart:uri";
+import "dart:io";
 
 import "src/io/autocloseable_test.dart" as autocloseable_test;
 import "src/language/objects_test.dart" as objects_test;
