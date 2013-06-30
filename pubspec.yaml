@@ -1,6 +1,8 @@
 name: dart_commons
+version: 0.0.0
 author: Jim Simon
-description: A sample command-line application
+description: A collection of utilities for working with the Dart programming language.
+homepage: https://github.com/jimsimon/dart_commons
 dependencies:
   unittest: any
 
