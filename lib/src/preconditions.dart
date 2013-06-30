@@ -7,7 +7,7 @@ part of dart_commons;
  * but can be optionally overridden with an custom [message] if desired.
  */
 checkThat(value, Matcher matcher, [String message]) {
-  var matchState = new MatchState();
+  var matchState = new Map();
   if (!matcher.matches(value, matchState)) {
     
     String failureMsg = message;
