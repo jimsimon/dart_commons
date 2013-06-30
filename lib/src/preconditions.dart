@@ -19,7 +19,7 @@ checkThat(value, Matcher matcher, [String message]) {
   return value;
 }
 
-String _getDefaultMessageForMismatch(value, Matcher matcher, MatchState matchState) {
+String _getDefaultMessageForMismatch(value, Matcher matcher, matchState) {
   var description = new StringDescription();
   description.add('Precondition Failed!\nExpected: ').addDescriptionOf(matcher).
   add('\n     but: ');
