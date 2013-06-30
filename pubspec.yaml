@@ -1,7 +1,7 @@
 name: dart_commons
 author: Jim Simon
 description: A sample command-line application
-dev_dependencies:
+dependencies:
   unittest: any
 
 #dependencies:
