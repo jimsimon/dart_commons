@@ -1,6 +1,6 @@
 library autocloseable_test;
 
-import 'package:dart_commons/io.dart';
+import "package:dart_commons/dart_commons.dart";
 import 'package:unittest/unittest.dart';
 
 main() {

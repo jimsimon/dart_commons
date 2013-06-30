@@ -1,4 +1,4 @@
-part of language;
+part of dart_commons;
 
 class Objects {
   _Objects() {}

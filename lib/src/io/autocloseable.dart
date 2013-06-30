@@ -1,4 +1,4 @@
-part of io;
+part of dart_commons;
 
 typedef dynamic AutoCloseableAction(AutoCloseable autoCloseable);
 typedef dynamic AutoCloseableOnError(e);

@@ -1,6 +1,6 @@
 library strings_test;
 
-import 'package:dart_commons/language.dart';
+import "package:dart_commons/dart_commons.dart";
 import 'package:unittest/unittest.dart';
 
 main() {

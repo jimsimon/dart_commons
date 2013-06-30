@@ -1,6 +1,6 @@
 library preconditions_test;
 
-import "package:dart_commons/preconditions.dart";
+import "package:dart_commons/dart_commons.dart";
 import "package:unittest/unittest.dart";
 
 main() {

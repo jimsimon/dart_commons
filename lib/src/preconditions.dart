@@ -1,6 +1,4 @@
-library preconditions;
-
-import "package:unittest/matcher.dart";
+part of dart_commons;
 
 /**
  * Checks a [value] against a [Matcher] and throws a [PreconditionError] value is not valid.  
