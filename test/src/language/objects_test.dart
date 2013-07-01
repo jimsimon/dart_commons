@@ -1,10 +1,7 @@
-library objects_test;
+part of tests;
 
-import "package:dart_commons/dart_commons.dart";
-import 'package:unittest/unittest.dart';
-import "dart:mirrors";
-
-main() {  
+@dart
+objects() {  
   
   var someValue = null.toString();
   

@@ -1,9 +1,7 @@
-library preconditions_test;
+part of tests;
 
-import "package:dart_commons/dart_commons.dart";
-import "package:unittest/unittest.dart";
-
-main() {
+@dart
+preconditions() {
   
   group("checkThat()", () {
     test("throws error on invalid condition", () {

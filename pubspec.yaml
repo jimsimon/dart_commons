@@ -5,6 +5,11 @@ description: A collection of utilities for working with the Dart programming lan
 homepage: https://github.com/jimsimon/dart_commons
 dependencies:
   unittest: any
+dev_dependencies:
+  darter:
+    git:
+      ref: develop
+      url: https://github.com/jimsimon/darter.git
 
 #dependencies:
 #  unittest: any

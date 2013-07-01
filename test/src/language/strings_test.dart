@@ -1,9 +1,7 @@
-library strings_test;
+part of tests;
 
-import "package:dart_commons/dart_commons.dart";
-import 'package:unittest/unittest.dart';
-
-main() {
+@dart
+strings() {
   group("isNullOrEmpty()", () {
     test("returns true for null", () {
       expect(Strings.isNullOrEmpty(null), true);
