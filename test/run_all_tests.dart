@@ -10,9 +10,6 @@ part "src/language/objects_test.dart";
 part "src/language/strings_test.dart";
 part "src/preconditions_test.dart";
 
-main() {
-  
-  useCompactVMConfiguration();
-  
+main() {  
   new Darter();
 }

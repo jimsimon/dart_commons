@@ -34,4 +34,14 @@ class Objects {
     }
     return null;
   }
+  
+  /**
+   * Determines whether [object] is a primitive type.
+   * 
+   * Primitive types detected by this function are: [null], [num] (including [int] and [double]), [String], and [bool].
+   */
+  static bool isPrimitive(object) {
+    return identical(object, null) || object is num || object is String ||
+        identical(object, true) || identical(object, false);
+  }
 }

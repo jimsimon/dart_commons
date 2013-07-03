@@ -34,6 +34,24 @@ objects() {
       expect(Objects.nullSafeInvoke(() => simpleTest.nested.nested), isNull);
     });
   });
+  
+  group("isPrimitive()", () {
+    test("returns true for int", () {
+      expect(Objects.isPrimitive(1), isTrue);
+    });
+    test("returns true for double", () {
+      expect(Objects.isPrimitive(2.0), isTrue);
+    });
+    test("returns true for bool", () {
+      expect(Objects.isPrimitive(false), isTrue);
+    });
+    test("returns true for null", () {
+      expect(Objects.isPrimitive(null), isTrue);
+    });
+    test("returns true for String", () {
+      expect(Objects.isPrimitive("string"), isTrue);
+    });
+  });
 }
 
 class _SimpleTestClass {
