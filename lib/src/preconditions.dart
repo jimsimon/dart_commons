@@ -14,7 +14,7 @@ checkThat(value, Matcher matcher, [String message]) {
     if (failureMsg == null) {
       failureMsg = _getDefaultMessageForMismatch(value, matcher, matchState);
     }
-    throw new PreconditionError(failureMsg);
+    throw new ArgumentError(failureMsg);
   }
   return value;
 }
@@ -26,10 +26,4 @@ String _getDefaultMessageForMismatch(value, Matcher matcher, matchState) {
   matcher.describeMismatch(value, description, matchState, false);
   description.add('.\n');
   return description.toString();
-}
-
-class PreconditionError implements Error {
-  final String message;
-  PreconditionError(this.message);
-  String toString() => message;
 }
