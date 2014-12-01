@@ -1,5 +1,5 @@
 name: dart_commons
-version: 0.0.0
+version: 0.0.1
 author: Jim Simon
 description: A collection of utilities for working with the Dart programming language.
 homepage: https://github.com/jimsimon/dart_commons
