@@ -3,24 +3,36 @@ part of tests;
 @dart
 preconditions() {
   
-  group("checkThat()", () {
-    test("throws an error on an invalid condition", () {
-      expect(() => checkThat(3, lessThan(2)), throwsA(new isInstanceOf<PreconditionError>()));
+  group("checkNotNull", () {
+    test("returns passed in value if it is not null", () {
+      Object obj = new Object();
+      expect(checkNotNull(obj), same(obj));
     });
-    
-    test("executes normally on a valid condition", () {
-      expect(() => checkThat(3, greaterThan(2)), returnsNormally);
+
+    test("throws error with no message when value is null and message is not provided", () {
+      expect(() => checkNotNull(null), throwsA((ArgumentError e) => e.message == null));
     });
-    
-    test("returns the checked value on a valid condition", (){
-      expect(checkThat("a string", new isInstanceOf<String>()), "a string");
+
+    test("throws error with custom message when value is null and custom message is provided", () {
+      expect(() => checkNotNull(null, "a custom message"), throwsA((ArgumentError e) => e.message == "a custom message"));
     });
-    
-    //TODO Find a better way to test custom error messages  
-    test("throws an error with a specific custom message", () {
-      String customMessage = "Must be over 9000!";
-      expect(() => checkThat(9000, greaterThan(9000), customMessage),
-          throwsA(predicate((PreconditionError e) => e.message == customMessage)));
+  });
+
+  group("checkArgument", () {
+    test("does not throw error when expression is true", () {
+      expect(() => checkArgument(true), returnsNormally);
+    });
+
+    test("throws error when expression is null", () {
+      expect(() => checkArgument(null), throwsA((ArgumentError e) => e.message == "Expression cannot be null"));
+    });
+
+    test("throws error with no message when expression is false and message is not provided", () {
+      expect(() => checkArgument(false), throwsA((ArgumentError e) => e.message == null));
+    });
+
+    test("throws error with custom message when expression is false and custom message is provided", () {
+      expect(() => checkArgument(false, "a custom message"), throwsA((ArgumentError e) => e.message == "a custom message"));
     });
   });
 }

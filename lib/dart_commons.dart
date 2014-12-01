@@ -1,6 +1,5 @@
 library dart_commons;
 
-import "package:unittest/matcher.dart";
 import "dart:mirrors";
 
 part "src/io/autocloseable.dart";

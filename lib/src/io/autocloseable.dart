@@ -23,7 +23,7 @@ abstract class AutoCloseable {
  * See: C#'s IDisposable interface
  */
 dynamic autoClose(AutoCloseable autoCloseable, AutoCloseableAction action, [AutoCloseableOnError onError]) {
-  checkThat(autoCloseable, isNotNull);
+  checkNotNull(autoCloseable, "autoCloseable cannot be null");
   
   //TODO Simplify this once Dart Issue 430 is resolved
   if (onError != null) {
