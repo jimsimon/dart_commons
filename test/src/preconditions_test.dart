@@ -1,7 +1,7 @@
-part of tests;
+import "package:unittest/unittest.dart";
+import "package:dart_commons/dart_commons.dart";
 
-@dart
-preconditions() {
+main() {
   
   group("checkNotNull", () {
     test("returns passed in value if it is not null", () {

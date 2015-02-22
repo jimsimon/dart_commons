@@ -1,7 +1,7 @@
-part of tests;
+import "package:unittest/unittest.dart";
+import "package:dart_commons/dart_commons.dart";
 
-@dart
-objects() {  
+main() {
   
   var someValue = null.toString();
   

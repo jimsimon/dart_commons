@@ -1,7 +1,7 @@
-part of tests;
+import "package:unittest/unittest.dart";
+import "package:dart_commons/dart_commons.dart";
 
-@dart
-autocloseable() {
+main() {
   group("autoClose()", () {
     test("throws error when error handler isn't specified and error occurs", () {
       expect(() => autoClose(new _CloseableTestObject(), (_CloseableTestObject cto){
